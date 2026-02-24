@@ -302,46 +302,97 @@
     }
     .photo-strip .section-label { color: var(--gold); }
 
+    /* ─── PHOTO GRID — PAIRS ─── */
     .photo-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 4rem 3rem;
       margin-top: 3rem;
     }
 
-    .photo-card {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
+    /* Each pair: front + back side by side */
+    .photo-pair {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .photo-card img {
+    .photo-pair-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .photo-pair-images img {
       width: 100%;
-      height: 340px;
-      object-fit: cover;
-      object-position: top;
-      filter: sepia(30%) contrast(1.05) brightness(0.9);
-      transition: filter 0.4s ease, transform 0.5s ease;
+      height: auto;
       display: block;
+      filter: sepia(20%) contrast(1.05) brightness(0.92);
+      transition: filter 0.4s ease;
     }
 
-    .photo-card:hover img {
-      filter: sepia(10%) contrast(1.1) brightness(1.0);
-      transform: scale(1.03);
+    .photo-pair-images img:hover {
+      filter: sepia(5%) contrast(1.08) brightness(1.0);
     }
 
-    .photo-card-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 2rem 1.2rem 1.2rem;
-      background: linear-gradient(to top, rgba(14,11,8,0.9), transparent);
+    /* Single image (no back) */
+    .photo-pair-images.single img {
+      grid-column: 1 / -1;
+      max-width: 60%;
+      margin: 0 auto;
+    }
+
+    .photo-pair figcaption {
       font-family: 'Cormorant SC', serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--faded);
-      transform: translateY(0);
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      color: var(--sepia);
+      text-align: center;
+    }
+
+    .photo-pair .back-note {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #4a3520;
+      text-align: center;
+      line-height: 1.55;
+    }
+
+    /* Legacy .photo-item for family section */
+    .photo-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .photo-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: sepia(20%) contrast(1.05) brightness(0.92);
+      transition: filter 0.4s ease;
+    }
+
+    .photo-item:hover img {
+      filter: sepia(5%) contrast(1.08) brightness(1.0);
+    }
+
+    .photo-item figcaption {
+      font-family: 'Cormorant SC', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      color: var(--sepia);
+      text-align: center;
+    }
+
+    .photo-item .back-note {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: #4a3520;
+      text-align: center;
+      line-height: 1.55;
     }
 
     /* ─── BIOGRAPHY ─── */
@@ -848,37 +899,54 @@
 
       <div class="photo-grid">
 
-        <figure class="photo-item fade-in">
-          <img src="18-6.jpg" alt="Иринка 1914" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="18-6.jpg" alt="Иринка 1914 — лице" />
+            <img src="Irinka_1914_b.jpg" alt="Иринка 1914 — гръб" />
+          </div>
           <figcaption>Варна, 1914</figcaption>
           <p class="back-note">„Тук съм на 18 години, снета в Варненското фото-ателие където работех в Варна"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="irinka_1932-1.jpg" alt="Иринка 1932" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="irinka_1932-1.jpg" alt="Иринка 1932 — лице" />
+            <img src="irinka_1932-2.jpg" alt="Иринка 1932 — гръб" />
+          </div>
           <figcaption>София, 1932</figcaption>
           <p class="back-note">„Тук съм на 36 години."</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="irinka1940.jpg" alt="Иринка 1940" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="irinka1940.jpg" alt="Иринка 1940 — лице" />
+            <img src="irinka1940b.jpg" alt="Иринка 1940 — гръб" />
+          </div>
           <figcaption>София, 1940</figcaption>
           <p class="back-note">„Irene · 1940"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="irinka_1943-4.jpg" alt="Иринка 1943" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="irinka_1943-4.jpg" alt="Иринка 1943 — лице" />
+            <img src="irinka_1943b.jpg" alt="Иринка 1943 — гръб" />
+          </div>
           <figcaption>София, Февруари 1943 — на бала</figcaption>
           <p class="back-note">„Тук съм точно на 47 години, преди да отида на бала се фотографирах"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="irinka_1965-1.jpg" alt="Иринка 1965" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images single">
+            <img src="irinka_1965-1.jpg" alt="Иринка 1965" />
+          </div>
           <figcaption>София, 1965</figcaption>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="Irinka_skoteto.jpg" alt="Иринка с котката ~1955" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="Irinka_skoteto.jpg" alt="Иринка с котката — лице" />
+            <img src="Irinka_skoteto_b2.jpg" alt="Иринка с котката — гръб" />
+          </div>
           <figcaption>София, ~1955–1957</figcaption>
           <p class="back-note">„На ти знаеш че обичам котенца — тук съм снета с базарджинчето ми"</p>
         </figure>
@@ -901,50 +969,74 @@
 
       <div class="photo-grid">
 
-        <figure class="photo-item fade-in">
-          <img src="Diado_Stoyan.jpg" alt="Дядо Стоян" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="Diado_Stoyan.jpg" alt="Дядо Стоян — лице" />
+            <img src="Diado_Stoyan_b.jpg" alt="Дядо Стоян — гръб" />
+          </div>
           <figcaption>Дядо Стоян Чобанов — Варна</figcaption>
           <p class="back-note">„Спомен от дедото Стоян Чобанов, фелдфебел в 8 транспортен полк — Варна"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="Kina_Shteriu_Petar.jpg" alt="Баба Кина с Щерю и Петър" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="Kina_Shteriu_Petar.jpg" alt="Баба Кина — лице" />
+            <img src="Kina_Shteriu_Petarb.jpg" alt="Баба Кина — гръб" />
+          </div>
           <figcaption>Баба Кина с Щерю и малкия Петър — Варна</figcaption>
           <p class="back-note">„Спомен от некогашният Варненски животец ний незабравим. Тук е бабата Кина — чичо ти Щерю като малчк в първо отделение, а малкото детенце е твоя отец татко малко детенце."</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="petar1.jpg" alt="Баща ми като пилот" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="petar1.jpg" alt="Баща ти пилот — лице" />
+            <img src="petar1b.jpg" alt="Баща ти пилот — гръб" />
+          </div>
           <figcaption>Баща ти Петър — пилот</figcaption>
           <p class="back-note">„Тука милият ти татко — пилотъ в отпуска беше дошел и аз го снех, до като си изкара военната служба аз с страх прекарах по него и много плаках до свършването на 2 годишна служба"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="petar2.jpg" alt="Баща ми на 28 години" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="petar2.jpg" alt="Баща ти на 28 — лице" />
+            <img src="petar2b.jpg" alt="Баща ти на 28 — гръб" />
+          </div>
           <figcaption>Баща ти Петър — на 28 години</figcaption>
           <p class="back-note">„Тук е милият ти татко в снимката е точно на 28 година"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="shteriu.jpg" alt="Чичо Щерю — офицер" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="shteriu.jpg" alt="Чичо Щерю — лице" />
+            <img src="shteriub.jpg" alt="Чичо Щерю — гръб" />
+          </div>
           <figcaption>Чичо Щерю — произведен в офицер</figcaption>
           <p class="back-note">„Тук е чичо ти Щерю като млад още щом го произведох в чин офицер — сега и той остаря и е много болен"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="Xriska.jpg" alt="Леля Хриска" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="Xriska.jpg" alt="Леля Хриска — лице" />
+            <img src="Xriskab.jpg" alt="Леля Хриска — гръб" />
+          </div>
           <figcaption>Леля Хриска — починала на 17 години</figcaption>
           <p class="back-note">„Леля ти Хриска умря на 17 години — снимах я и като ученичка в малката снимка"</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="strinka_Maria.jpg" alt="Стринка Мария" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="strinka_Maria.jpg" alt="Стринка Мария — лице" />
+            <img src="strinka_Maria_b.jpg" alt="Стринка Мария — гръб" />
+          </div>
           <figcaption>Стринка Мария — жената на Щерю</figcaption>
-          <p class="back-note">„В тази снимка е стринка ти Мария — жената на чичо ти Щерю. Тука аз я снех като млада. Тя тебе много те обича и всякак ме пита мамка пишо от тебе..."</p>
+          <p class="back-note">„В тази снимка е стринка ти Мария — жената на чичо ти Щерю. Тя тебе много те обича и всякак ме пита мамка пишо от тебе..."</p>
         </figure>
 
-        <figure class="photo-item fade-in">
-          <img src="Irinka_Joro_Slavka.jpg" alt="Иринка кръсница на Славка и Жоро" />
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="Irinka_Joro_Slavka.jpg" alt="Иринка кръсница — лице" />
+            <img src="Irinka_Joro_Slavkab.jpg" alt="Иринка кръсница — гръб" />
+          </div>
           <figcaption>Иринка — кръсница на Славка и Жоро</figcaption>
           <p class="back-note">„Тук е Жоро и женят Славка — аз съм кръстница от страна на Славка. Вече чичото Жоро умря, станали две години."</p>
         </figure>
