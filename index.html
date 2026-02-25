@@ -1241,11 +1241,11 @@
     </p>
     <p class="footer-note" style="margin-top: 1rem;">
       Коментари и въпроси:
-      <a href="/cdn-cgi/l/email-protection#96e6f3e2e4f9e1b8fbf7e4fff9d6f7f4e0b8f4f1" style="color: var(--gold); text-decoration: none; letter-spacing: 0.05em;"><span class="__cf_email__" data-cfemail="4e3e2b3a3c213960232f3c27210e2f2c38602c29">[email&#160;protected]</span></a>
+      <a href="mailto:petrow.mario@abv.bg" style="color: var(--gold); text-decoration: none; letter-spacing: 0.05em;">petrow.mario@abv.bg</a>
     </p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Intersection observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1255,4 +1255,14 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.fade-in, .timeline-i
+    document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger timeline items
+    document.querySelectorAll('.timeline-item').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
+  </script>
+</body>
+</html>
