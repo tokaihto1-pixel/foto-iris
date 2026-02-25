@@ -338,13 +338,7 @@
     /* Single image (no back) */
     .photo-pair-images.single img {
       grid-column: 1 / -1;
-      max-width: 100%;
-      margin: 0 auto;
-    }
-
-    /* In family-grid, single images are portrait so cap the width */
-    .family-grid .photo-pair-images.single img {
-      max-width: 55%;
+      max-width: 60%;
       margin: 0 auto;
     }
 
@@ -959,7 +953,7 @@
         Десетилетия преди думата „selfie" да съществува.
       </p>
 
-      <div class="family-grid">
+      <div class="photo-grid">
 
         <figure class="photo-pair fade-in">
           <div class="photo-pair-images">
@@ -971,7 +965,7 @@
         </figure>
 
         <figure class="photo-pair fade-in">
-          <div class="photo-pair-images single">
+          <div class="photo-pair-images">
             <img src="irinka_1932-1.jpg" alt="Иринка 1932 — лице" />
           </div>
           <figcaption>София, 1932</figcaption>
@@ -979,7 +973,7 @@
         </figure>
 
         <figure class="photo-pair fade-in">
-          <div class="photo-pair-images single">
+          <div class="photo-pair-images">
             <img src="irinka1940.jpg" alt="Иринка 1940 — лице" />
           </div>
           <figcaption>София, 1940</figcaption>
@@ -987,16 +981,12 @@
         </figure>
 
         <figure class="photo-pair fade-in">
-          <div class="photo-pair-images single">
+          <div class="photo-pair-images">
             <img src="irinka_1943-4.jpg" alt="Иринка 1943 — лице" />
           </div>
           <figcaption>София, Февруари 1943 — на бала</figcaption>
           <p class="back-note">„Тук съм точно на 47 години, преди да отида на бала се фотографирах"</p>
         </figure>
-
-      </div>
-
-      <div class="photo-grid" style="margin-top: 4rem;">
 
         <figure class="photo-pair fade-in">
           <div class="photo-pair-images single">
@@ -1248,11 +1238,11 @@
     </p>
     <p class="footer-note" style="margin-top: 1rem;">
       Коментари и въпроси:
-      <a href="/cdn-cgi/l/email-protection#bcccd9c8ced3cb92d1ddced5d3fcdddeca92dedb" style="color: var(--gold); text-decoration: none; letter-spacing: 0.05em;"><span class="__cf_email__" data-cfemail="40302534322f376e2d2132292f002122366e2227">[email&#160;protected]</span></a>
+      <a href="mailto:petrow.mario@abv.bg" style="color: var(--gold); text-decoration: none; letter-spacing: 0.05em;">petrow.mario@abv.bg</a>
     </p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Intersection observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1262,4 +1252,14 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.fade-in, .timeline-i
+    document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger timeline items
+    document.querySelectorAll('.timeline-item').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
+  </script>
+</body>
+</html>
