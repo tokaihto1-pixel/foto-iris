@@ -1261,7 +1261,13 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.fade-in, .timeline-i
+    document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+      observer.observe(el);
+    });
+
+    document.querySelectorAll('.timeline-item').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
   </script>
 </body>
 </html>
