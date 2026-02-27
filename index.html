@@ -1132,7 +1132,11 @@
     <div class="photo-strip-inner">
       <p class="section-label fade-in"><span class="lang-bg">Работата</span><span class="lang-en">The Work</span></p>
       <h2 class="section-title fade-in"><span class="lang-bg">Снимки от ателието</span><span class="lang-en">Studio Photographs</span></h2>
-<p class="fade-in lang-bg" style="color: var(--faded); margin-bottom: 3rem; max-width: 650px;">За жалост над 99% от архивите на ателието са изгубени. Тези снимки са сред малкото оцелели свидетелства за работата на Иринка Чобанова като фотограф.</p><p class="fade-in lang-en" style="color: var(--faded); margin-bottom: 3rem; max-width: 650px;">Sadly, over 99% of the studio archives have been lost. These photographs are among the few surviving witnesses to Irinka Chobanova's work as a photographer.</p>
+      <p class="fade-in" style="color: var(--faded); margin-bottom: 3rem; max-width: 650px;">
+        За жалост над 99% от архивите на ателието са изгубени. Тези снимки са
+        сред малкото оцелели свидетелства за работата на Иринка Чобанова
+        като фотограф.
+      </p>
 
       <div class="family-grid">
         <figure class="photo-pair fade-in">
@@ -1153,10 +1157,26 @@
 
         <figure class="photo-pair fade-in">
           <div class="photo-pair-images">
+            <img src="pete1.jpg" alt="Клиент" />
+            <img src="pete2.jpg" alt="Клиент" />
+          </div>
+          <figcaption><span class="lang-bg">Фото „Добруджа" — Царица Йоанна 20, преди 1944</span><span class="lang-en">Photo "Dobrudzha" — Tsaritsa Yoanna 20, before 1944</span></figcaption>
+        </figure>
+
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
+            <img src="pete3.jpg" alt="Клиент" />
+            <img src="pete4.jpg" alt="Клиент" />
+          </div>
+          <figcaption><span class="lang-bg">Фото „Добруджа" — Царица Йоанна 20, преди 1944</span><span class="lang-en">Photo "Dobrudzha" — Tsaritsa Yoanna 20, before 1944</span></figcaption>
+        </figure>
+
+        <figure class="photo-pair fade-in">
+          <div class="photo-pair-images">
             <img src="43166137_2197139300297889_168906658431369216_n.jpg" alt="Клиент" />
             <img src="265407393_5027482697263521_6509191257965299378_n.jpg" alt="Печат Фото Добруджа" />
           </div>
-          <figcaption>София — Фото „Добруджа" / „Ирис"</figcaption>
+          <figcaption><span class="lang-bg">София — Фото „Добруджа" / „Ирис"</span><span class="lang-en">Sofia — Photo "Dobrudzha" / "Iris"</span></figcaption>
         </figure>
 
       </div>
@@ -1207,7 +1227,7 @@
   <script>
 
     function setLang(lang) {
-      const isBG = (lang === 'bg');
+      var isBG = (lang === 'bg');
       document.querySelectorAll('.lang-bg').forEach(function(el) {
         el.style.display = isBG ? '' : 'none';
       });
@@ -1219,9 +1239,10 @@
       });
       localStorage.setItem('foto-iris-lang', lang);
     }
-    // Hide all EN on page load, then check saved preference
     document.addEventListener('DOMContentLoaded', function() {
+      // First hide all EN
       document.querySelectorAll('.lang-en').forEach(function(el) { el.style.display = 'none'; });
+      // Then apply saved preference
       var saved = localStorage.getItem('foto-iris-lang') || 'bg';
       setLang(saved);
     });
