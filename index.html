@@ -1,24 +1,883 @@
-[HERO: Full-bleed photo of Irinka + camera]
-"Irinka Chobanova • 1896–1987"
-"A woman who worked behind the lens for half a century in Sofia"
-[↓ Scroll indicator]
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Фото ИРИС — Иринка Чобанова | Bulgarian Photographer 1896–1987</title>
+  <meta name="description" content="Иринка Чобанова — жена фотограф, работила в София повече от половин век. Биография, хронология, портрети и наследството на ателие ИРИС." />
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Фото ИРИС — Иринка Чобанова" />
+  <meta property="og:description" content="Животът зад обектива: 56 години фотография в София" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://tokaihto1-pixel.github.io/foto-iris/Irinka_1965-1.jpg" />
+  <meta property="og:url" content="https://tokaihto1-pixel.github.io/foto-iris/" />
+  
+  <!-- Structured Data (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Иринка Чобанова",
+    "alternateName": "Irinka Chobanova",
+    "birthDate": "1896",
+    "deathDate": "1987",
+    "jobTitle": "Photographer",
+    "knowsAbout": ["Portrait photography", "Studio photography", "Bulgarian history"],
+    "url": "https://tokaihto1-pixel.github.io/foto-iris/"
+  }
+  </script>
 
-[NAV: Home • Life • Timeline • Gallery • Documents • Legacy • 🌐 BG/EN]
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+SC:wght@300;400;600&display=swap" rel="stylesheet" />
 
-[SECTION: Life Behind the Lens]
-  Two-column: Text (left) + Portrait collage (right)
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       CORE VARIABLES & RESET — PRESERVED FROM YOUR ORIGINAL
+       ═══════════════════════════════════════════════════════════ */
+    :root {
+      --ink: #1a1510;
+      --paper: #f4ede0;
+      --cream: #ede3d0;
+      --sepia: #8b6f47;
+      --rust: #7a3d1f;
+      --gold: #b8923a;
+      --faded: #c9b89a;
+      --dark: #0e0b08;
+      --transition: all 0.3s ease;
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'EB Garamond', serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.7;
+      font-size: 1.1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Grain overlay — your signature effect, preserved */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 9999;
+    }
 
-[SECTION: Interactive Timeline]
-  ●——●——●——●——●  (clickable dots with modal previews)
+    /* ═══════════════════════════════════════════════════════════
+       NEW: STICKY NAVIGATION WITH PROGRESS
+       ═══════════════════════════════════════════════════════════ */
+    .nav-container {
+      position: sticky;
+      top: 0;
+      background: rgba(244, 237, 224, 0.95);
+      backdrop-filter: blur(4px);
+      border-bottom: 1px solid var(--faded);
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+    }
+    
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      font-family: 'Cormorant SC', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-links a {
+      color: var(--ink);
+      text-decoration: none;
+      padding: 0.3rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--rust);
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+    
+    .lang-switcher {
+      display: flex;
+      gap: 0.3rem;
+    }
+    
+    .lang-btn {
+      background: none;
+      border: 1px solid var(--sepia);
+      color: var(--ink);
+      padding: 0.25rem 0.6rem;
+      font-family: 'Cormorant SC', serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    
+    .lang-btn.active,
+    .lang-btn:hover {
+      background: var(--rust);
+      color: var(--paper);
+      border-color: var(--rust);
+    }
+    
+    /* Progress bar */
+    .progress-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--faded);
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--gold);
+      width: 0%;
+      transition: width 0.1s ease;
+    }
 
-[SECTION: Studio Photographs]
-  [🖼️] [🖼️] [🖼️]  (masonry grid, hover: title + year)
-  [Load more...]
+    /* ═══════════════════════════════════════════════════════════
+       HERO SECTION — ENHANCED WITH SUBTLE ANIMATION
+       ═══════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--paper) 0%, var(--cream) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+      animation: fadeUp 0.8s ease-out;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--sepia);
+      margin-bottom: 2rem;
+      font-style: italic;
+    }
+    
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--sepia);
+      font-size: 0.9rem;
+      animation: bounce 2s infinite;
+      text-decoration: none;
+    }
 
-[SECTION: The Stamps]
-  [Image: back of photo with stamp]
-  Hover: "Stalin St. 20 • ~1950s" → tooltip with historical context
+    /* ═══════════════════════════════════════════════════════════
+       SECTIONS — PRESERVED STRUCTURE, ENHANCED ACCESSIBILITY
+       ═══════════════════════════════════════════════════════════ */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    
+    .section-label {
+      font-family: 'Cormorant SC', serif;
+      color: var(--rust);
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 2rem;
+      color: var(--ink);
+    }
+    
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    
+    @media (max-width: 768px) {
+      .bio-grid { grid-template-columns: 1fr; }
+    }
 
-[FOOTER]
-  "56 years before the lens of history"
-  [Social/share] [PDF download] [Contact/Contribute]
+    /* ═══════════════════════════════════════════════════════════
+       NEW: LIGHTBOX GALLERY — LIGHTWEIGHT, ACCESSIBLE
+       ═══════════════════════════════════════════════════════════ */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      cursor: zoom-in;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      aspect-ratio: 3/4;
+      background: var(--cream);
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+      display: block;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 21, 16, 0.85);
+      color: var(--paper);
+      padding: 0.6rem;
+      font-size: 0.85rem;
+      transform: translateY(100%);
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* Lightbox overlay */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(14, 11, 8, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      padding: 1rem;
+    }
+    
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .lightbox-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      position: relative;
+    }
+    
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 85vh;
+      border-radius: 4px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    
+    .lightbox-caption {
+      text-align: center;
+      color: var(--paper);
+      margin-top: 1rem;
+      font-style: italic;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .lightbox-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      color: var(--paper);
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: var(--transition);
+    }
+    
+    .lightbox-close:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: var(--paper);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    
+    .lightbox-nav:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    
+    .lightbox-prev { left: -60px; }
+    .lightbox-next { right: -60px; }
+    
+    @media (max-width: 768px) {
+      .lightbox-prev { left: 10px; }
+      .lightbox-next { right: 10px; }
+      .lightbox-close { top: 10px; right: 10px; }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       TIMELINE — ENHANCED WITH BETTER TOUCH SUPPORT
+       ═══════════════════════════════════════════════════════════ */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: var(--gold);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.1rem;
+      top: 0.4rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 3px solid var(--rust);
+    }
+    
+    .timeline-year {
+      font-family: 'Cormorant SC', serif;
+      color: var(--rust);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       UTILITIES & ANIMATIONS — PRESERVED + ENHANCED
+       ═══════════════════════════════════════════════════════════ */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .lang-en { display: none; }
+    body.en .lang-bg { display: none; }
+    body.en .lang-en { display: inline; }
+    
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+    
+    /* Focus states for accessibility */
+    a:focus, button:focus, .gallery-item:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    
+    /* Skip link for screen readers */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--rust);
+      color: var(--paper);
+      padding: 0.5rem 1rem;
+      z-index: 3000;
+      transition: top 0.3s;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      background: var(--dark);
+      color: var(--faded);
+      font-size: 0.95rem;
+      margin-top: 4rem;
+    }
+    
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Accessibility: Skip to content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Sticky Navigation -->
+  <nav class="nav-container" aria-label="Main navigation">
+    <div class="nav-inner">
+      <ul class="nav-links">
+        <li><a href="#bio" class="lang-bg">Биография</a><a href="#bio" class="lang-en">Biography</a></li>
+        <li><a href="#timeline" class="lang-bg">Хронология</a><a href="#timeline" class="lang-en">Timeline</a></li>
+        <li><a href="#portraits" class="lang-bg">Портрети</a><a href="#portraits" class="lang-en">Portraits</a></li>
+        <li><a href="#family" class="lang-bg">Семейство</a><a href="#family" class="lang-en">Family</a></li>
+        <li><a href="#legacy" class="lang-bg">Наследство</a><a href="#legacy" class="lang-en">Legacy</a></li>
+      </ul>
+      <div class="lang-switcher" role="group" aria-label="Language selection">
+        <button class="lang-btn active" onclick="setLang('bg')" aria-pressed="true">БГ</button>
+        <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <div class="progress-container"><div class="progress-bar" id="progress"></div></div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" role="banner">
+    <div class="hero-content">
+      <h1>
+        <span class="lang-bg">Иринка Чобанова</span>
+        <span class="lang-en">Irinka Chobanova</span>
+        <br />
+        <span style="font-size: 0.7em; font-weight: 400; display: block; margin-top: 0.5em;">
+          <span class="lang-bg">1896 – 1987</span>
+          <span class="lang-en">1896 – 1987</span>
+        </span>
+      </h1>
+      <p class="hero-subtitle">
+        <span class="lang-bg">Жена фотограф, работила в София повече от половин век</span>
+        <span class="lang-en">A woman photographer who worked in Sofia for over half a century</span>
+      </p>
+      <p style="font-style: italic; color: var(--sepia);">
+        <span class="lang-bg">Ателие „ИРИС" • бул. „Царица Йоанна" / „Сталин" / „Витоша" №20</span>
+        <span class="lang-en">Studio "IRIS" • Tsaritsa Yoanna / Stalin / Vitosha Blvd. No. 20</span>
+      </p>
+    </div>
+    <a href="#bio" class="hero-scroll" aria-label="Scroll to biography">↓</a>
+  </section>
+
+  <main id="main-content">
+    <!-- Biography Section -->
+    <section id="bio" class="section">
+      <p class="section-label fade-in"><span class="lang-bg">Биография</span><span class="lang-en">Biography</span></p>
+      <h2 class="section-title fade-in"><span class="lang-bg">Животът зад обектива</span><span class="lang-en">A Life Behind the Lens</span></h2>
+      
+      <div class="bio-grid">
+        <div class="fade-in">
+          <p class="lang-bg">
+            Иринка Чобанова е родена през 1896 г. в Лом. Още като тийнейджърка показва интерес към фотографията и започва чиракуване във фотоателие във Варна около 1909 г. По-късно отваря собственото си ателие „Фото Добруджа", а след това се установява в София, където работи до края на живота си.
+          </p>
+          <p class="lang-en">
+            Irinka Chobanova was born in 1896 in Lom, Bulgaria. As a teenager, she showed interest in photography and began an apprenticeship at a photo studio in Varna around 1909. She later opened her own studio "Photo Dobrudzha" before settling in Sofia, where she worked until the end of her life.
+          </p>
+          <p style="margin-top: 1.5rem;" class="lang-bg">
+            Тя работи с голямоформатна германска камера, използвайки стъклени негативи. Нейните портрети са известни с вниманието към детайла, топлотата и достойнството, което предава на всеки обект.
+          </p>
+          <p style="margin-top: 1.5rem;" class="lang-en">
+            She worked with a German large-format camera using glass plate negatives. Her portraits are known for their attention to detail, warmth, and the dignity she conveyed in every subject.
+          </p>
+        </div>
+        <div class="fade-in" style="display: grid; gap: 1rem;">
+          <img src="Irinka_1965-1.jpg" 
+               alt="Irinka Chobanova, circa 1965" 
+               loading="lazy"
+               style="width: 100%; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+          <small style="color: var(--sepia); font-style: italic;">
+            <span class="lang-bg">Иринка в ателието, ~1965</span>
+            <span class="lang-en">Irinka in her studio, ~1965</span>
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="section" style="background: var(--cream);">
+      <p class="section-label fade-in"><span class="lang-bg">Хронология</span><span class="lang-en">Timeline</span></p>
+      <h2 class="section-title fade-in"><span class="lang-bg">Осем десетилетия занаят</span><span class="lang-en">Eight Decades of Craft</span></h2>
+      
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">1896</div>
+          <p><span class="lang-bg">Родена в Лом, България</span><span class="lang-en">Born in Lom, Bulgaria</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">~1909</div>
+          <p><span class="lang-bg">Започва чиракуване във фотоателие във Варна</span><span class="lang-en">Begins apprenticeship at a photo studio in Varna</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">~1920</div>
+          <p><span class="lang-bg">Отваря „Фото Добруджа"</span><span class="lang-en">Opens "Photo Dobrudzha" studio</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">~1930</div>
+          <p><span class="lang-bg">Премества се в София, ателие на бул. „Царица Йоанна" №20</span><span class="lang-en">Moves to Sofia; studio at Tsaritsa Yoanna Blvd. No. 20</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">1944</div>
+          <p><span class="lang-bg">Арестувана и затворена за кратко</span><span class="lang-en">Arrested and briefly imprisoned</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">~1950s</div>
+          <p><span class="lang-bg">Бул. „Царица Йоанна" става „Сталин", после „Витоша"</span><span class="lang-en">Boulevard renamed: Tsaritsa Yoanna → Stalin → Vitosha</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">1986</div>
+          <p><span class="lang-bg">Последна снимка с камерата</span><span class="lang-en">Final photograph taken with her camera</span></p>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-year">1987</div>
+          <p><span class="lang-bg">Почива в София на 91 години</span><span class="lang-en">Passes away in Sofia at age 91</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portraits Gallery (NEW LIGHTBOX) -->
+    <section id="portraits" class="section">
+      <p class="section-label fade-in"><span class="lang-bg">Портрети</span><span class="lang-en">Portraits</span></p>
+      <h2 class="section-title fade-in"><span class="lang-bg">Иринка през годините</span><span class="lang-en">Irinka Through the Years</span></h2>
+      
+      <div class="gallery-grid">
+        <!-- Gallery items with data attributes for lightbox -->
+        <div class="gallery-item fade-in" tabindex="0" role="button" 
+             data-full="Irinka_1965-1.jpg" 
+             data-caption="<span class='lang-bg'>Иринка, ~1965</span><span class='lang-en'>Irinka, ~1965</span>">
+          <img src="Irinka_1965-1.jpg" alt="Irinka Chobanova portrait" loading="lazy">
+          <div class="gallery-caption">
+            <span class="lang-bg">~1965</span><span class="lang-en">~1965</span>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" tabindex="0" role="button"
+             data-full="irinka1940.jpg"
+             data-caption="<span class='lang-bg'>Иринка, ~1940</span><span class='lang-en'>Irinka, ~1940</span>">
+          <img src="irinka1940.jpg" alt="Irinka Chobanova, circa 1940" loading="lazy">
+          <div class="gallery-caption">
+            <span class="lang-bg">~1940</span><span class="lang-en">~1940</span>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" tabindex="0" role="button"
+             data-full="irinka_1932-1.jpg"
+             data-caption="<span class='lang-bg'>Иринка, ~1932</span><span class='lang-en'>Irinka, ~1932</span>">
+          <img src="irinka_1932-1.jpg" alt="Irinka Chobanova, circa 1932" loading="lazy">
+          <div class="gallery-caption">
+            <span class="lang-bg">~1932</span><span class="lang-en">~1932</span>
+          </div>
+        </div>
+        <div class="gallery-item fade-in" tabindex="0" role="button"
+             data-full="IRI.jpg"
+             data-caption="<span class='lang-bg'>Портрет от ателие ИРИС</span><span class='lang-en'>Portrait from IRIS studio</span>">
+          <img src="IRI.jpg" alt="Studio portrait from IRIS" loading="lazy">
+          <div class="gallery-caption">
+            <span class="lang-bg">Ателие ИРИС</span><span class="lang-en">IRIS Studio</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal (Hidden by default) -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <div class="lightbox-content">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">‹</button>
+        <img src="" alt="" class="lightbox-img" id="lightbox-img">
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">›</button>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+    </div>
+
+    <!-- Family Section (abbreviated for brevity - you can expand similarly) -->
+    <section id="family" class="section" style="background: var(--cream);">
+      <p class="section-label fade-in"><span class="lang-bg">Семейството</span><span class="lang-en">The Family</span></p>
+      <h2 class="section-title fade-in"><span class="lang-bg">Надписано с нейна ръка</span><span class="lang-en">Written in Her Own Hand</span></h2>
+      <p class="fade-in lang-bg">
+        Иринка пази спомени за семейството си чрез снимки и бележки. Тези документи разкриват личната ѝ страна зад професионалния обектив.
+      </p>
+      <p class="fade-in lang-en">
+        Irinka preserved memories of her family through photographs and handwritten notes. These documents reveal the personal side behind her professional lens.
+      </p>
+      <!-- Add family gallery here using same .gallery-grid pattern -->
+    </section>
+
+    <!-- Legacy Section -->
+    <section id="legacy" class="section">
+      <p class="section-label fade-in"><span class="lang-bg">Наследство</span><span class="lang-en">Legacy</span></p>
+      <h2 class="section-title fade-in"><span class="lang-bg">56 години пред обектива на историята</span><span class="lang-en">56 Years Before the Lens of History</span></h2>
+      <p class="fade-in lang-bg">
+        Работата на Иринка Чобанова е ценен прозорец към българската история през XX век. Нейните снимки документират не само лица, но и епоха — с достойнство, топлота и майсторство.
+      </p>
+      <p class="fade-in lang-en">
+        Irinka Chobanova's work is a valuable window into 20th-century Bulgarian history. Her photographs document not just faces, but an era — with dignity, warmth, and masterful craft.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      <span class="lang-bg">Фото ИРИС — Дигитален архив в памет на Иринка Чобанова</span>
+      <span class="lang-en">Photo IRIS — Digital archive in memory of Irinka Chobanova</span>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+      <span class="lang-bg">Създадено с уважение • 2026</span>
+      <span class="lang-en">Crafted with respect • 2026</span>
+    </p>
+    <p style="margin-top: 1rem;">
+      <a href="https://github.com/tokaihto1-pixel/foto-iris" target="_blank" rel="noopener">
+        <span class="lang-bg">Вижте кода в GitHub</span>
+        <span class="lang-en">View source on GitHub</span>
+      </a>
+    </p>
+  </footer>
+
+  <!-- JavaScript: Language, Lightbox, Animations, Progress -->
+  <script>
+    // ═══════════════════════════════════════════════════════════
+    // LANGUAGE TOGGLE — ENHANCED WITH URL PARAMS
+    // ═══════════════════════════════════════════════════════════
+    function setLang(lang) {
+      document.body.classList.toggle('en', lang === 'en');
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang));
+        btn.setAttribute('aria-pressed', btn.classList.contains('active'));
+      });
+      localStorage.setItem('lang', lang);
+      // Update URL for shareability (without reload)
+      const url = new URL(window.location);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url);
+    }
+
+    // Initialize language from URL param or localStorage
+    (function initLang() {
+      const urlLang = new URLSearchParams(window.location.search).get('lang');
+      const savedLang = localStorage.getItem('lang');
+      const lang = urlLang || savedLang || 'bg';
+      setLang(lang);
+    })();
+
+    // ═══════════════════════════════════════════════════════════
+    // LIGHTBOX GALLERY — ACCESSIBLE & KEYBOARD FRIENDLY
+    // ═══════════════════════════════════════════════════════════
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    let galleryItems = [];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const item = galleryItems[index];
+      lightboxImg.src = item.dataset.full;
+      lightboxImg.alt = item.querySelector('img').alt;
+      lightboxCaption.innerHTML = item.dataset.caption;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function navigateLightbox(direction) {
+      currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+      openLightbox(currentIndex);
+    }
+
+    // Initialize gallery items
+    document.addEventListener('DOMContentLoaded', () => {
+      galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+      
+      galleryItems.forEach((item, index) => {
+        // Click/tap to open
+        item.addEventListener('click', () => openLightbox(index));
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox(index);
+          }
+        });
+      });
+
+      // Lightbox controls
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+      lightboxNext.addEventListener('click', () => navigateLightbox(1));
+      
+      // Close on background click
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigateLightbox(-1);
+        if (e.key === 'ArrowRight') navigateLightbox(1);
+      });
+    });
+
+    // ═══════════════════════════════════════════════════════════
+    // SCROLL ANIMATIONS & PROGRESS BAR
+    // ═══════════════════════════════════════════════════════════
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Update nav active state
+          const id = entry.target.id;
+          if (id) {
+            document.querySelectorAll('.nav-links a').forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-in, .timeline-item, .section').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Stagger timeline animations
+    document.querySelectorAll('.timeline-item').forEach((el, i) => {
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
+
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / scrollHeight) * 100;
+      document.getElementById('progress').style.width = `${progress}%`;
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
