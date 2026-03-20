@@ -680,6 +680,30 @@
       margin-top: 0.3rem;
     }
 
+    /* ─── COMMENTS SECTION STYLES ─── */
+    .comments-section {
+      max-width: 780px;
+      margin: 4rem auto 2rem;
+      padding: 2rem 2rem 0;
+      border-top: 1px solid var(--faded);
+      background-color: var(--paper);
+    }
+    
+    .comments-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+    
+    .comments-title span {
+      color: var(--gold);
+      font-style: italic;
+    }
+    
     /* ─── FOOTER ─── */
     footer {
       background-color: var(--dark);
@@ -761,6 +785,10 @@
         border-left: none;
         border-top: 1px solid var(--faded);
         padding-top: 2rem;
+      }
+      .comments-section {
+        margin: 2rem 1rem;
+        padding: 2rem 1rem 0;
       }
     }
   </style>
@@ -1213,6 +1241,32 @@
 
 <p class="fade-in lang-bg" style="max-width: 700px; font-size: 1.05rem; color: #3a2e1e; line-height: 1.8;">Иринка Чобанова остава рядко документиран пример за жена-предприемач в фотографията на ХХ век. В епоха, в която частното предприемачество в България беше потиснато, тя успяла да запази ателието си в продължение на десетилетия — свидетелство за занаятчийска упоритост, личен чар и неугасима любов към светлината.</p><p class="fade-in lang-en" style="max-width: 700px; font-size: 1.05rem; color: #3a2e1e; line-height: 1.8;">Irinka Chobanova remains a rarely documented example of a female entrepreneur in 20th-century photography. In an era when private enterprise in Bulgaria was suppressed, she kept her studio running for decades — a testament to perseverance, personal charm, and an undying love of light.</p>
   </div>
+
+  <!-- ========== НОВА СЕКЦИЯ ЗА КОМЕНТАРИ (GISCUS) ========== -->
+  <div class="comments-section">
+    <h3 class="comments-title">
+      <span class="lang-bg">💬 Коментари</span>
+      <span class="lang-en">💬 Comments</span>
+    </h3>
+    
+    <!-- Giscus script - инсталиран за tokaihto1-pixel/foto-iris -->
+    <script src="https://giscus.app/client.js"
+        data-repo="tokaihto1-pixel/foto-iris"
+        data-repo-id="R_kgDORWJgiA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDORWJgiM4C4zyh"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="bg"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </div>
+  <!-- ========== КРАЙ НА СЕКЦИЯТА ЗА КОМЕНТАРИ ========== -->
 
   <!-- ═══ FOOTER ═══ -->
   <footer>
