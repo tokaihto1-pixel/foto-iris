@@ -684,7 +684,7 @@
     .comments-section {
       max-width: 780px;
       margin: 4rem auto 2rem;
-      padding: 2rem 2rem 0;
+      padding: 2rem;
       border-top: 1px solid var(--faded);
       background-color: var(--paper);
     }
@@ -695,13 +695,24 @@
       font-weight: 700;
       color: var(--ink);
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       letter-spacing: 0.05em;
     }
     
     .comments-title span {
       color: var(--gold);
       font-style: italic;
+    }
+    
+    .comments-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--sepia);
+      margin-bottom: 1.5rem;
+    }
+    
+    #cusdis_thread {
+      margin-top: 1rem;
     }
     
     /* ─── FOOTER ─── */
@@ -788,7 +799,7 @@
       }
       .comments-section {
         margin: 2rem 1rem;
-        padding: 2rem 1rem 0;
+        padding: 2rem 1rem;
       }
     }
   </style>
@@ -1087,6 +1098,13 @@
         </figure>
 
         <figure class="photo-pair fade-in">
+          <div class="photo-pair-images single">
+            <img src="Irinka_Zhenia.jpg" alt="Иринка с трите си сестри" />
+          </div>
+          <figcaption>Иринка с трите си сестри</figcaption>
+        </figure>
+
+        <figure class="photo-pair fade-in">
           <div class="photo-pair-images">
             <img src="Xriska.jpg" alt="Леля Хриска — лице" />
             <img src="Xriskab.jpg" alt="Леля Хриска — гръб" />
@@ -1242,31 +1260,29 @@
 <p class="fade-in lang-bg" style="max-width: 700px; font-size: 1.05rem; color: #3a2e1e; line-height: 1.8;">Иринка Чобанова остава рядко документиран пример за жена-предприемач в фотографията на ХХ век. В епоха, в която частното предприемачество в България беше потиснато, тя успяла да запази ателието си в продължение на десетилетия — свидетелство за занаятчийска упоритост, личен чар и неугасима любов към светлината.</p><p class="fade-in lang-en" style="max-width: 700px; font-size: 1.05rem; color: #3a2e1e; line-height: 1.8;">Irinka Chobanova remains a rarely documented example of a female entrepreneur in 20th-century photography. In an era when private enterprise in Bulgaria was suppressed, she kept her studio running for decades — a testament to perseverance, personal charm, and an undying love of light.</p>
   </div>
 
-  <!-- ========== НОВА СЕКЦИЯ ЗА КОМЕНТАРИ (GISCUS) ========== -->
+  <!-- ========== CUSDIS КОМЕНТАРИ (без вход, без реклами) ========== -->
   <div class="comments-section">
     <h3 class="comments-title">
       <span class="lang-bg">💬 Коментари</span>
       <span class="lang-en">💬 Comments</span>
     </h3>
+    <p class="comments-note">
+      <span class="lang-bg">Вашият коментар ще се появи след одобрение.</span>
+      <span class="lang-en">Your comment will appear after approval.</span>
+    </p>
     
-    <!-- Giscus script - инсталиран за tokaihto1-pixel/foto-iris -->
-    <script src="https://giscus.app/client.js"
-        data-repo="tokaihto1-pixel/foto-iris"
-        data-repo-id="R_kgDORWJgiA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDORWJgiM4C4zyh"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="light"
-        data-lang="bg"
-        crossorigin="anonymous"
-        async>
-    </script>
+    <!-- Cusdis embed code - REPLACE APP_ID with your actual App ID from cusdis.com -->
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="YOUR_APP_ID_HERE"
+      data-page-id="foto-iris-home"
+      data-page-url="https://tokaihto1-pixel.github.io/foto-iris/"
+      data-page-title="Фото ИРИС — Иринка Чобанова"
+      data-theme="light">
+    </div>
+    <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
   </div>
-  <!-- ========== КРАЙ НА СЕКЦИЯТА ЗА КОМЕНТАРИ ========== -->
+  <!-- ========== КРАЙ НА КОМЕНТАРИТЕ ========== -->
 
   <!-- ═══ FOOTER ═══ -->
   <footer>
@@ -1278,7 +1294,7 @@
     </p>
     <p class="footer-note" style="margin-top: 1rem;">
       <span class="lang-bg">Коментари и въпроси:</span><span class="lang-en">Comments and enquiries:</span>
-      <a href="/cdn-cgi/l/email-protection#f7879283859880d99a96859e98b7969581d99590" style="color: var(--gold); text-decoration: none; letter-spacing: 0.05em;"><span class="__cf_email__" data-cfemail="bbcbdecfc9d4cc95d6dac9d2d4fbdad9cd95d9dc">petrow.mario@abv.bg</span></a>
+      <a href="mailto:petrow.mario@abv.bg" style="color: var(--gold); text-decoration: none; letter-spacing: 0.05em;">petrow.mario@abv.bg</a>
     </p>
   </footer>
 
